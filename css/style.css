@@ -1,0 +1,68 @@
+/* BASE
+============================================================================= */
+@import url(http://fonts.googleapis.com/css?family=Offside);
+
+html                            { overflow-y:scroll; }
+body                            { margin-top:40px; }
+
+/* HEADER
+============================================================================= */
+#header                         { margin-bottom:50px; }
+
+    /* logo */
+    #logo                       { color:#FFF; font-family:'Offside'; font-size:80px; margin-bottom:50px; margin-top:50px; }
+    #logo span                  { display:inline-block; }
+
+/* MAIN NAV
+============================================================================= */
+#main-nav                       { margin-bottom:30px; }
+
+/* SIDEBAR
+============================================================================= */
+#sidebar                        {  }
+
+#sidebar-nav                    {  }
+#sidebar-nav ul                 { list-style:none; padding-left:0; }
+#sidebar-nav li                 {  }
+#sidebar-nav a                  { background:#428bca; color:#FFF; display:block; margin-bottom:10px; padding:20px; text-transform:uppercase;
+    border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
+}
+    #sidebar-nav a:hover        { background:#3276b1; text-decoration:none; }
+
+/* CONTENT
+============================================================================= */
+#content                        { background:#FFF; min-height:400px; padding:20px;
+    border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
+}
+#content img                    { border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
+body {
+    background-image: url("img/Creative-Minimalist-1920*1080.png");
+    background-color: #cccccc;
+}
+
+/* ANIMATIONS
+============================================================================= */
+
+    /* logo */
+    .bb                         { animation-delay:0.2s; -moz-animation-delay:0.2s; -webkit-animation-delay:0.2s; }
+    .bu                         { animation-delay:0.8s; -moz-animation-delay:0.8s; -webkit-animation-delay:0.8s; }
+    .bc                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
+    .bk                         { animation-delay:1s; -moz-animation-delay:1s; -webkit-animation-delay:1s; }
+    .be                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
+    .bt                         { animation-delay:1.2s; -moz-animation-delay:1.2s; -webkit-animation-delay:1.2s; }
+
+    .ll                         { animation-delay:1.4s; -moz-animation-delay:1.4s; -webkit-animation-delay:1.4s; }
+    .li                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
+    .ls                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
+    .lt                         { animation-delay:0.5s; -moz-animation-delay:0.5s; -webkit-animation-delay:0.5s; }
+
+    /* sidebar */
+    #side-home                  { animation-delay:0.2s; -moz-animation-delay:0.2s; -webkit-animation-delay:0.2s; }
+    #side-about                 { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
+    #side-work                  { animation-delay:0.8s; -moz-animation-delay:0.8s; -webkit-animation-delay:0.8s; }
+    #side-contact               { animation-delay:0.3s; -moz-animation-delay:0.3s; -webkit-animation-delay:0.3s; }
+
+    /* content */
+    #content                    { animation-delay:1.5s; -moz-animation-delay:1.5s; -webkit-animation-delay:1.5s; }
+        #content img            { animation-delay:1.7s; -moz-animation-delay:1.7s; -webkit-animation-delay:1.7s; }
+
