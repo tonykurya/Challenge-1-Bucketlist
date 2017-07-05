@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css"><!-- load animate -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <script type="text/javascript" src="js/script.js"></script>
+
 
 </head>
 
@@ -45,8 +48,29 @@
 
         <nav id="main-nav">
             <ul class="list-unstyled list-inline">
+                
                 <li><a id="demo-1" class="animated btn btn-danger" href="index.html">Sign Up</a></li>
-                <li><a id="demo-2" class="animated btn btn-danger" href="two.html">Login</a></li>
+                
+                <li><a id="demo-2" class="animated btn btn-danger">Login</a></li>
+                      
+                   <div id="popup">
+                       <div id="popup-bg"></div>
+                          <div id="popup-fg">
+    
+                            <form><label>Username</label><input type="text"><label>Password</label>
+                            <input type="password"></form>
+                                <div class="actions">
+                                    <button id="submit">Login</button>
+                                    <button id="close">Cancel</button>
+                                </div>
+                         </div>
+                      </div>
+
+                
+                
+                
+                
+                
                 <li><a id="demo-3" class="animated btn btn-danger" href="three.html">Help</a></li>
             </ul>
         </nav>
