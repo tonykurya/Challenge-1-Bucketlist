@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+
+
+<head>
+    
+    <title>Bucket List</title>
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css"><!-- load animate -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="text/javascript" src="js/script.js"></script>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+    <div id="header" class="row text-center">
+             
+        <div id="logo">          
+            
+            <span id="danger">
+                <span class="dd animated bounceInDown">b</span>
+                <span class="da animated bounceInDown">u</span>
+                <span class="dn animated bounceInDown">c</span>
+                <span class="dg animated bounceInDown">k</span>
+                <span class="de animated bounceInDown">e</span>
+                <span class="dr animated bounceInDown">t</span>
+            </span>
+           
+            <span id="zone">
+                <span class="zz animated bounceInDown">l</span>
+                <span class="zo animated bounceInDown">i</span>
+                <span class="zn animated bounceInDown">s</span>
+                <span class="ze animated bounceInDown">t</span>
+            </span>
+        </div>
+
+        <nav id="main-nav">
+            <ul class="list-unstyled list-inline">
+                
+                <li><a id="demo-1" class="animated btn btn-danger btn btn-primary" data-toggle="modal" href="myModal">Sign Up</a></li>
+                       
+                       <div class="modal hide" id="myModal">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <h3>Login to Bucketlist</h3>
+                          </div>
+                          <div class="modal-body">
+                             <form method="post" action='' name="login_form">
+                                <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
+                                <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
+                                <p><button type="submit" class="btn btn-primary">Sign in</button>
+                                   <a href="#">Forgot Password?</a>
+                                </p>
+                             </form>
+                          </div>
+                          
+                          <div class="modal-footer">
+                            Bucketlist
+                            <a href="#" class="btn btn-primary">Register</a>
+                          </div>
+                       </div>
+                
+                
+                
+                
+                <li><a id="demo-2" class="animated btn btn-danger">Login</a></li>
+                      
+                   <div id="popup">
+                       <div id="popup-bg"></div>
+                          <div id="popup-fg">
+    
+                            <form><label>Username</label><input type="text"><label>Password</label>
+                            <input type="password"></form>
+                                <div class="actions">
+                                    <button id="submit">Login</button>
+                                    <button id="close">Cancel</button>
+                                </div>
+                         </div>
+                      </div>
+
+                
+                
+                
+                
+                
+                <li><a id="demo-3" class="animated btn btn-danger" href="three.html">Help</a></li>
+                
+                   
+                
+            </ul>
+        </nav>
+
+    </div>
+
+    <div id="main" class="row">
+        <div id="sidebar" class="col-sm-4">
+            <nav id="sidebar-nav">
+                <ul>
+                    <li><a id="side-home" class="animated bounceInLeft" href="#">Home</a>
+                    <li><a id="side-about" class="animated bounceInLeft" href="#">About</a>
+                    <li><a id="side-work" class="animated bounceInLeft" href="#">Create Bucketlist</a>
+                    <li><a id="side-contact" class="animated bounceInLeft" href="#">View Bucketlist</a>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="content" class="animated bounceInUp col-sm-8 text-center">
+            <div class="row">
+                <div class="col-sm-4">
+
+
+                      <div class="card card-inverse card-primary p-3 text-center">
+                            <blockquote class="card-blockquote">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                              <footer>
+                                <small>
+                                  Someone famous in <cite title="Source Title">Source Title</cite>
+                                </small>
+                              </footer>
+                            </blockquote>
+                      </div>
+
+
+
+
+
+
+                  <!--  <img class="img-responsive animated bounceInUp" src="img/list.png"> -->
+                </div>
+                <div class="col-sm-4">
+                    <div class="card card-inverse card-primary p-3 text-center">
+                            <blockquote class="card-blockquote">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                              <footer>
+                                <small>
+                                  Someone famous in <cite title="Source Title">Source Title</cite>
+                                </small>
+                              </footer>
+                            </blockquote>
+                      </div>
+
+                </div>
+                <div class="col-sm-4">
+                    <div class="card card-inverse card-primary p-3 text-center">
+                            <blockquote class="card-blockquote">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                              <footer>
+                                <small>
+                                  Someone famous in <cite title="Source Title">Source Title</cite>
+                                </small>
+                              </footer>
+                            </blockquote>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
