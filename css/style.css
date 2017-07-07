@@ -4,7 +4,7 @@
 
 html                            { overflow-y:scroll; }
 body                            { margin-top:40px; }
-
+#main-content 					{ background:url(../img/bg.jpg); }
 /* HEADER
 ============================================================================= */
 #header                         { margin-bottom:50px; }
@@ -35,10 +35,6 @@ body                            { margin-top:40px; }
     border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 }
 #content img                    { border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
-body {
-    background-image: url("bg.png");
-    background-color: #cccccc;
-}
 
 /* ANIMATIONS
 ============================================================================= */
@@ -83,6 +79,21 @@ body {
  
 /* VIEW CSS
 ==================================================================== */
+/* 
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+}
+
+*/
 
 fieldset, img {border:0}
 
