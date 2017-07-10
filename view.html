@@ -7,8 +7,10 @@
 <head>
     
     <title>Bucket List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> load bootstrap -->
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css"><!-- load animate -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/demo-three.css">
@@ -46,19 +48,7 @@
                 <span class="zn animated bounceInDown">s</span>
                 <span class="ze animated bounceInDown">t</span>
             </span>
-        </div>
-
-        <nav id="main-nav">
-            <ul class="list-unstyled list-inline">
-                
-                <li><a id="demo-1" class="animated btn btn-danger btn btn-primary" data-toggle="modal" href="myModal">ADD</a></li>
-                
-                <li><a id="demo-2" class="animated btn btn-danger">SELECT</a></li>
-                
-                <li><a id="demo-3" class="animated btn btn-danger" href="three.html">DELETE</a></li>
-                
-            </ul>
-        </nav>
+        </div
 
     </div>
 
@@ -75,39 +65,35 @@
         </div>
    
 
-        <div id="content" class="animated bounceInUp col-sm-8 text-center">
+        <div id="content" class="animated bounceInUp col-sm-8 text-center">  
                   <div class="row">
-                
-                        <div class="col-sm-4">
+                        <div class="grid_6">
+                            <section class="widget storage">
+                              <header class="header header-quaternary">
+                                <h3>Bucket List</h3>
+                                <div class="background-icon"><span class="icon-cloud"></span></div>
+                              </header>
+                              <article>
+                                <ul>
+                                  <li>
+                                    Visit Paris.
+                                  </li>
+                                  <li>
+                                    Go bunjee jumping.
+                                  </li>
+                                  <li class="active">
+                                    Climb Mt.Kenya.
+                                  </li>
+                                  <li>
+                                    Visit the ISS.
+                                  </li>
+                                </ul>
+                                <div class="meta">Last updated 3 mins ago</div>
+                              </article>
+                            </section>
+                        </div>
 
-                              <div class="card card-inverse card-primary p-3" style="background-color: #F6A617; border-color: F6A717; color: #fff; border-radius: 10px">
                         
-                                  <div class="card-block">
-                                        <h3 class="card-title">Card title</h3>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Check</a>
-                                  </div>
-
-                              
-                              </div>
-                        </div>
-                         
-                 
-
-                        <div class="col-sm-4">
-
-                              <div class="card card-inverse card-primary p-3" style="background-color: #F6A617; color: #fff; border-radius: 10px">
-              
-                                      <div class="card-block">
-                                        <h3 class="card-title">Card title</h3>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary align-left">Check</a>
-                                      </div>
-                                 
-                              </div>
-
-                        </div>
-                
                 </div>
                 
        </div>
