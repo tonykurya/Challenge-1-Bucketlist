@@ -31,13 +31,13 @@ body                            { margin-top:40px; }
 
 /* CONTENT
 ============================================================================= */
-/*  
+/* 
 #content                        { background:#FFF; min-height:400px; padding:20px;
     border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 }
 #content img                    { border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
-
 */
+
 /* ANIMATIONS
 ============================================================================= */
 
@@ -107,4 +107,8 @@ body                            { margin-top:40px; }
 .storage li.active              { color: #555555; }
 
 .storage li.active:before       { content: '\e60c'; font-family: icomoon; background: #48cfad; color: #fff; box-sizing: border-box; padding: 2px; }
+
+
+/* Modal
+======================================================================================================= */
 
