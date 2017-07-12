@@ -109,6 +109,188 @@ body                            { margin-top:40px; }
 .storage li.active:before       { content: '\e60c'; font-family: icomoon; background: #48cfad; color: #fff; box-sizing: border-box; padding: 2px; }
 
 
-/* Modal
+/* Bucket
 ======================================================================================================= */
+
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+html,
+body {
+  background: linear-gradient(270deg, #D9A68C, #D9D68C);
+  margin: 0 0;
+  padding: 0 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: default;
+}
+/*
+.container {
+  margin: 110px auto;
+  width: 500px;
+  text-align: center;
+}
+*/
+h2 {
+  background: #B43C52;
+  padding: 20px 20px;
+  color: #FFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: left;
+  margin: 0 0;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #FFF;
+  font-size: 20px;
+  width: 350px;
+}
+
+::-webkit-input-placeholder {
+  color: #FFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+.list {
+  background: #34495E;
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.bucket ul {
+  margin: 0 -40px;
+}
+
+.bucket li {
+  list-style: none;
+  text-align: left;
+  padding: 30px;
+  width: 460px;
+  transition: all .3s ease;
+  color: #FFF;
+  font-size: 16px;
+}
+
+.bucket li:hover {
+  background: #2C3E50;
+}
+
+.check {
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  margin: 0 20px;
+  float: right;
+  transition: all .3s ease;
+  cursor: default;
+  padding: 3px;
+}
+
+.remove {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  float: right;
+  margin: 0 0;
+  background-position: center;
+  background-size: 10px;
+  transition: all .3s ease;
+  cursor: default;
+  padding: 4px;
+}
+
+.remove:hover {
+  background: #B43C52;
+  padding: 4px;
+  cursor: default;
+}
+
+.selected {
+  background: url(../../assets/images/check.png) #B43C52;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-size: 10px;
+  transition: all .3s ease;
+  border: 1px solid #B43C52;
+  cursor: default;
+}
+
+/* Login
+=====================================================================================
+*/
+
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Tenor+Sans);
+
+@mixin placeholder($color: $placeholder-text) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+$blue: #5D92BA;
+$heading-font: 'Tenor Sans', sans-serif;
+
+.login{
+  margin-top: 50px;
+  width: 450px;
+}
+.login-heading{
+  font: 1.8em/48px $heading-font;
+  color: white;
+}
+
+.input-txt{
+  width: 100%;
+  padding: 20px 10px;
+  background: $blue;
+  border: none;
+  font-size: 1em;
+  color: white;
+  border-bottom: 1px dotted rgba(250, 250, 250, .4);
+  @include box-sizing(border-box);
+  @include placeholder(lighten($blue, 10%));
+  @include transition(background-color .5s ease-in-out);
+    &:focus{
+     background-color: darken($blue, 10%);
+    }
+}
+.login-footer{
+  margin: 10px 0;
+  overlow: hidden;
+  float: left;
+  width: 100%;
+}
+
+.icon{
+  display: inline-block;
+}
+.icon--min{
+  font-size: .9em;
+}
+.lnk{
+  font-size: .8em;
+  line-height: 3em;
+  color: white;
+  text-decoration: none;
+}
 
