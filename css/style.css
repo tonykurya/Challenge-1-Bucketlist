@@ -70,7 +70,7 @@ body                            { margin-top:40px; }
 
 
 /* BUCKET LIST
-============================================================================= */
+=============================================================================*/
 .widget                         { font-family: 'Source Sans Pro', sans-serif; box-shadow: 0 2px 0 rgba(204, 204, 204, 0.15);
                       margin-bottom: 20px; border-radius: 0 0 3px 3px; background: #fff; position: relative; 
                                 }
@@ -111,15 +111,12 @@ body                            { margin-top:40px; }
 
 /* Bucket
 ======================================================================================================= */
-
-
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 html,
 body {
-  background: linear-gradient(270deg, #D9A68C, #D9D68C);
   margin: 0 0;
   padding: 0 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto';
   cursor: default;
 }
 /*
@@ -150,7 +147,7 @@ input[type="text"] {
 
 ::-webkit-input-placeholder {
   color: #FFF;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto';
   font-size: 20px;
 }
 
@@ -230,67 +227,93 @@ input[type="text"] {
 /* Login
 =====================================================================================
 */
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text-login"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
-@import "compass/css3";
-
-@import url(https://fonts.googleapis.com/css?family=Tenor+Sans);
-
-@mixin placeholder($color: $placeholder-text) {
-  &:-moz-placeholder {
-    color: $color;
-  }
-  &:-ms-input-placeholder {
-    color: $color;
-  }
-  &::-webkit-input-placeholder {
-    color: $color;
-  }
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #2C3E50;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; 10px; 10px; 10px;
+}
+.login-title
+{
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    color:#FFF; font-family:'Offside';
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+  
 }
 
-$blue: #5D92BA;
-$heading-font: 'Tenor Sans', sans-serif;
-
-.login{
-  margin-top: 50px;
-  width: 450px;
-}
-.login-heading{
-  font: 1.8em/48px $heading-font;
-  color: white;
+.btn-wine {
+    color: #f8f8f8;
+    background-color: #B43C52;
+    border-color: #B43C52;
 }
 
-.input-txt{
-  width: 100%;
-  padding: 20px 10px;
-  background: $blue;
-  border: none;
-  font-size: 1em;
-  color: white;
-  border-bottom: 1px dotted rgba(250, 250, 250, .4);
-  @include box-sizing(border-box);
-  @include placeholder(lighten($blue, 10%));
-  @include transition(background-color .5s ease-in-out);
-    &:focus{
-     background-color: darken($blue, 10%);
-    }
-}
-.login-footer{
-  margin: 10px 0;
-  overlow: hidden;
-  float: left;
-  width: 100%;
-}
-
-.icon{
-  display: inline-block;
-}
-.icon--min{
-  font-size: .9em;
-}
-.lnk{
-  font-size: .8em;
-  line-height: 3em;
-  color: white;
-  text-decoration: none;
-}
+.btn-wine:hover {
+    color: #f8f8f8;
+    background-color: #891c30;
+    border-color: #B43C52;
 
