@@ -1,0 +1,91 @@
+
+
+/* BASE
+============================================================================= */
+@import url(http://fonts.googleapis.com/css?family=Offside);
+
+html                            { overflow-y:scroll; }
+body                            { margin-top:40px; }
+#main-content 					{ background:url(bg.jpg); }
+/* HEADER
+============================================================================= */
+#header                         { margin-bottom:50px; }
+
+    /* logo */
+    #logo                       { color:#FFF; font-family:'Offside'; font-size:80px; margin-bottom:50px; margin-top:50px; }
+    #logo span                  { display:inline-block; }
+
+/* MAIN NAV
+============================================================================= */
+#main-nav                       { margin-bottom:30px; }
+
+
+/* ANIMATIONS
+============================================================================= */
+
+    /* logo */
+    .bb                         { animation-delay:0.2s; -moz-animation-delay:0.2s; -webkit-animation-delay:0.2s; }
+    .bu                         { animation-delay:0.8s; -moz-animation-delay:0.8s; -webkit-animation-delay:0.8s; }
+    .bc                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
+    .bk                         { animation-delay:1s; -moz-animation-delay:1s; -webkit-animation-delay:1s; }
+    .be                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
+    .bt                         { animation-delay:1.2s; -moz-animation-delay:1.2s; -webkit-animation-delay:1.2s; }
+
+    .ll                         { animation-delay:1.4s; -moz-animation-delay:1.4s; -webkit-animation-delay:1.4s; }
+    .li                         { animation-delay:0.4s; -moz-animation-delay:0.4s; -webkit-animation-delay:0.4s; }
+    .ls                         { animation-delay:0.6s; -moz-animation-delay:0.6s; -webkit-animation-delay:0.6s; }
+    .lt                         { animation-delay:0.5s; -moz-animation-delay:0.5s; -webkit-animation-delay:0.5s; }
+
+        /* content */
+    #content                    { animation-delay:1.5s; -moz-animation-delay:1.5s; -webkit-animation-delay:1.5s; }
+        #content img            { animation-delay:1.7s; -moz-animation-delay:1.7s; -webkit-animation-delay:1.7s; }
+
+
+
+
+
+
+
+
+.form-control {
+display: inline-block;
+}
+.add_button {
+margin: 10px 0px 10px 0px;
+}
+.checkbox {
+margin-top: 20px;
+}
+.completed_item {
+text-decoration: line-through;
+}
+h1 {
+display: inline-block;
+color: #292b33;
+}
+body {
+background-color: #f6f6f6;
+}
+.text_holder {
+display: block;
+max-width: 100%;
+word-wrap: break-word;
+}
+#main {
+margin-top: 50px;
+background-color: #ffffff;
+border-radius: 5px;
+width: 50%;
+border: 1px solid #545454;
+}
+.btn-wine {
+    color: #f8f8f8;
+    background-color: #B43C52;
+    border-color: #B43C52;
+}
+
+.btn-wine:hover {
+    color: #f8f8f8;
+    background-color: #891c30;
+    border-color: #B43C52;
+
