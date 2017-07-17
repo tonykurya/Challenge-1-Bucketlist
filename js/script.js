@@ -59,7 +59,75 @@ $(document).on("click", ".remove", function() {
 
 
 
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "Username" && password == "password"){
+alert ("Login successfully");
+window.location = "index.html"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
 
+
+
+
+
+
+//Push all new elements into this empty //array
+var added = [ ];
+//add counter for each new element
+var counter = 1;
+document.getElementById("add").addEventListener("click", function(){
+  var newDiv = document.createElement("div");
+  var newContent = document.createTextNode("NEW"); 
+  var currentDiv = document.getElementById("div1"); 
+  //create a constructor function that adds elements to dom
+  function addElement(){
+    //create new element 
+    //give it some content
+    newDiv.appendChild(newContent); //add the text node to the newly created div. 
+    //add id to current element
+    newDiv.id = "new";
+
+    // add the newly created element and its content into the DOM 
+    document.body.insertBefore(newDiv, currentDiv); 
+    console.log(added.length);
+    alert("button was clicked " + (counter++) + " times");
+  }
+  //initialize function
+  addElement();
+});
+
+document.getElementById("editor_trash_delete_recycle_bin_outline_stroke").addEventListener("click", function(){ 
+  var currentDiv = document.getElementById("new"); 
+  function deleteElement(){
+    //delete current element 
+    //target the currentDiv and if it has a parentNode
+    //removeChild of currentDiv
+    if (currentDiv.parentNode) {
+      currentDiv.parentNode.removeChild(currentDiv);
+      alert("button was clicked " + (counter--) + " times");
+    }
+     
+    
+  }
+  //initialize function
+  deleteElement();
+});
 
 
 

@@ -7,12 +7,32 @@
     
     <title>Bucket List</title>
 
+
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css"><!-- load animate -->
     <link rel="stylesheet" href="css/style.css">
     
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+
+
+
+  
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="script" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
+
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+   	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+   <script src="//code.jquery.com/jquery=1.11.1.min.js"></script>
 
 
 </head>
@@ -50,13 +70,13 @@
         <nav id="main-nav">
             <ul class="list-unstyled list-inline">
                 
-                <li><a id="demo-1" class="animated btn btn-danger btn btn-wine" data-toggle="modal" href="myModal">Create</a></li>
+                <li><a class="animated btn btn-wine" href="create.html">Create</a></li>
                        
                 
-                <li><a id="demo-2" class="animated btn btn-wine" data-toggle="modal" data-target="#myModal">View</a></li>
+                <li><a id="demo-2" class="animated btn btn-wine" href="view.html">View</a></li>
       
                 
-                <li><a id="demo-3" class="animated btn btn-wine" href="three.html">Log Out</a></li>
+                <li><a id="demo-3" class="animated btn btn-wine" href="login.html">Log Out</a></li>
                           
             </ul>
         </nav>

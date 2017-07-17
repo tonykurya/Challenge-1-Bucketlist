@@ -255,7 +255,7 @@ input[type="text"] {
 {
     z-index: 2;
 }
-.form-signin input[type="text-login"]
+.form-signin input[type="text"]
 {
     margin-bottom: -1px;
     border-bottom-left-radius: 0;
