@@ -4,9 +4,8 @@
 
 html                            { overflow-y:scroll; }
 body                            { margin-top:40px; }
-#main-content 					{ background-image: url({{ url_for('static', filename='img/bg.jpg') }}) }
-/* HEADER   
-
+#main-content 					{ background: #d3c9c9 }
+/* HEADER                         
 ============================================================================= */
 #header-secondary                         { margin-bottom:50px; }
 

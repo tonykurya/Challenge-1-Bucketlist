@@ -20,7 +20,7 @@ app.config.update(dict(
 
 
 def connect_db():
-    # Connects to a specfic database
+    '''Connects to a specfic database'''
     rv = sqlite3.connect(app.config['DATABASE'])
     rv.row_factory = sqlite3.Row
     return rv
@@ -35,7 +35,7 @@ def init_db():
 
 @app.cli.command('initdb')
 def initdb_command():
-    """Initializes the database."""
+    '''Initializes the database.'''
     init_db()
     print('Initialized the database.')
 
@@ -56,43 +56,67 @@ def close_db(error):
         g.sqlite_db.close()
 
 
+@app.route('/show_entries')
+def show_entries():
+    '''This view shows all the entries stored in the database'''
+    db = get_db()
+    cur = db.execute('select event from entries order by id desc')
+    entries = cur.fetchall()
+    return render_template('show_entries.html', entries=entries)
+
+
+@app.route('/add', methods=['POST'])
+def add_entry():
+    '''This view lets the user add new entries if they are logged in.'''
+    if not session.get('logged_in'):
+        abort(401)
+    db = get_db()
+    db.execute('insert into entries (event) values (?)',
+               [request.form['event']])
+    db.commit()
+    flash('New entry was successfully posted')
+    return redirect(url_for('show_entries'))
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/dashboard')
-def dashboard():
-    return render_template('dashboard.html')
+@app.route('/base')
+def base():
+    return render_template('base.html')
+
+
+@app.route('/layout')
+def layout():
+    return render_template('layout.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    '''
-    error = ''
-    try:
-        if request.method == "POST":
-            attempted_username = request.form['username']
-            attempted_password = request.form['password']
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != app.config['USERNAME']:
+            error = 'Invalid username'
+        elif request.form['password'] != app.config['PASSWORD']:
+            error = 'Invalid password'
+        else:
+            session['logged_in'] = True
+            flash('You were logged in')
+            return redirect(url_for('show_entries'))
+    return render_template('login.html', error=error)
 
-            flash(attempted_username)
-            flash(attempted_password)
 
-            if attempted_username == "admin" and attempted_password == "password":
-                return redirect(url_for('dashboard'))
-            else:
-                error = "Invalid credentials. Try Again."
-
-        return render_template('login.html', error=error)
-
-    except Exception as e:
-        flash(e)
-        '''
-    return render_template("login.html")
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out')
+    return redirect(url_for('show_entries'))
 
 
 @app.route('/register')
-def createaccount():
+def register():
     return render_template('register.html')
 
 
