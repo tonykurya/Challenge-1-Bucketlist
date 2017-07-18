@@ -1,23 +1,20 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 
 
 <head>
-    
+    <meta charset="utf-8">
     <title>Bucket List</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="script" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
 
-	
-	<link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 	
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
@@ -25,18 +22,41 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
    <script src="//code.jquery.com/jquery=1.11.1.min.js"></script>
 
+<!--
+    <link rel="stylesheet href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+-->
+
+    
 </head>
 
 
+<header>
 
-   <!--
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
--->
+
+
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">
+			<img style="max-width:80px; margin-top: -7px" src="{{ url_for('static', filename='img/mainlogo.png') }}">
+			</a>
+        </div>
+
+
+        <div class="container-fluid">
+               <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+        
+
+		</div>
+
+
+			
+
+</header>
 
 
 <body id="main-content">
@@ -45,7 +65,7 @@
 
 <div class="container">
 
-
+<!--
     <div id="header-secondary" class="row text-center">
              
         <div id="logo">          
@@ -66,25 +86,25 @@
                 <span class="ze animated bounceInDown">t</span>
             </span>
         </div>
+   
 
         <nav id="main-nav">
             <ul class="list-unstyled list-inline">
                 
-                <li><a class="animated btn btn-wine" href="/support) }}">Support</a></li>
+                <li><a id="demo-1" class="animated btn btn-danger btn btn-wine" data-toggle="modal" href="myModal">Create</a></li>
                        
                 
-                <li><a id="demo-2" class="animated btn btn-wine" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
+                <li><a id="demo-2" class="animated btn btn-wine" data-toggle="modal" data-target="#myModal">View</a></li>
       
                 
-                <li><a id="demo-3" class="animated btn btn-wine" href="/register"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Sign Up</a></li>
+                <li><a id="demo-3" class="animated btn btn-wine" href="three.html">
+				<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log Out</a></li>
                           
             </ul>
         </nav>
 
     </div>
-
-
+-->
 
         <div id="main" class="animated bounceInUp container">
             <div class="jumbotron" style="background: #d3c9c9">

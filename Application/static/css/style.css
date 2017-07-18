@@ -4,9 +4,8 @@
 
 html                            { overflow-y:scroll; }
 body                            { margin-top:40px; }
-#main-content 					{ background-image: url({{ url_for('static', filename='img/bg.jpg') }}) }
-/* HEADER   
-
+#main-content 					{ background:url(img/bg.jpg); }
+/* HEADER
 ============================================================================= */
 #header-secondary                         { margin-bottom:50px; }
 
@@ -225,7 +224,7 @@ input[type="text"] {
 
 /* Login
 =====================================================================================
-
+*/
 .form-signin
 {
     max-width: 330px;
@@ -238,7 +237,7 @@ input[type="text"] {
 }
 .form-signin .checkbox
 {
-    font-weight: normal; margin-left: 10px;
+    font-weight: normal;
 }
 .form-signin .form-control
 {
@@ -254,9 +253,9 @@ input[type="text"] {
 {
     z-index: 2;
 }
-.form-signin input[type="text"]
+.form-signin input[type="text-login"]
 {
-    margin-bottom: 1px;
+    margin-bottom: -1px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 
@@ -304,7 +303,6 @@ input[type="text"] {
     margin-top: 10px;
   
 }
-*/
 
 .btn-wine {
     color: #f8f8f8;
@@ -317,82 +315,3 @@ input[type="text"] {
     background-color: #891c30;
     border-color: #B43C52;
 
-/*--header--*/
-
-.header-w3l{
-    margin: 75px;
-}
-.header-w3l h1{
-  font-size:3em;
-    color:white;
-    letter-spacing: 6px;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-}
-/*--//header--*/
-
-/*--main--*/
-
-.main-content-agile {
-    margin: 145px 0px;
-}
-.sub-main-w3 input[type="text"],.sub-main-w3 input[type="password"] {
-    outline: none;
-    font-size: 1.1em;
-    padding: 20px 10px 20px 10px;
-    border: none;
-    margin: 0 0 15px 0;
-    font-family: 'Open Sans', sans-serif;
-    background: none;
-    border-bottom: 2px solid #eee;
-    width: 20%;
-    color: white;
-    font-weight: 600;
-}
-.sub-main-w3 input[type="submit"] {
-  background: url('Application/static/arrow.png') no-repeat 30% 45%;
-    height: 67px;
-    outline: none;
-    margin-top: 38px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #fff;
-    width: 67px;
-}
-/*--//main--*/
-
-/*--footer--*/
-.footer {
-    padding: 2.3em 0;
-}
-.footer p {
-    font-size: .9em;
-    color: white;
-}
-.footer p a {
-    color: #d20962;
-}
-.footer p a:hover {
-   text-decoration:underline;
-}
-/*--//footer--*/
-
-/*--placeholder-color--*/
-
-::-webkit-input-placeholder{
-  color:rgba(255, 255, 255, 0.65);
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: rgba(255, 255, 255, 0.65); 
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(255, 255, 255, 0.65);  
-}
-
-:-ms-input-placeholder {  
-   color: rgba(255, 255, 255, 0.65);  
-}
-/*--//placeholder-color--*/
