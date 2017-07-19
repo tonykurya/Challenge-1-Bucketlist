@@ -46,14 +46,14 @@ nosetests --with-coverage
 Documentation is not currently available but may be available at a future date.
 
 ## Author
-[![Antony Kuria](https://avatars0.githubusercontent.com/u/21196473?v=4&s=460)](https://github.com/tonykurya)
+[![Antony Kuria](https://secure.gravatar.com/avatar/9fb098fe2f246b722a13d3fd046cfdbc?s=200)](https://github.com/tonykurya)
 
 
 ## License
 
 ### The MIT License (MIT)
 
-Copyright (c) 2017 Antony Kuria <tonykurya.github.io/profile-portfolio/>
+Copyright (c) 2017 Antony Kuria <antonykurya@gmail.com>
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
