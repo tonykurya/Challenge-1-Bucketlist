@@ -3,83 +3,91 @@
 flaskBucket: Python-Flask Class Encapsulating Create Read Update Delete BucketList
 """
 from flask import Flask, render_template, url_for, request, flash, redirect
-from DataHandler import USER_DICT, BUCKET_LIST
+from app import app
 
 
-class FlaskBucket:
-    """Flask Bucket."""
+Class Account:
+    """
+    This class represents user account data and methods.
+    """
+    def __init__(self):
+    """
+    Initialize self
+    """
+        self.bucket = []
+        self.email = ""
+        self.name = ""
+        self.password = ""
 
-    def __init__(self, DataHandler):
-        self.app = Flask(__name__)
-        self.USER_DICT = USER_DICT
-        self.BUCKET_LIST = BUCKET_LIST
+    def add_event(self, event):
+    """
+    Method that adds an event to the bucket
+    """
+       self.bucket.append(event)
+       
+    def delete_event(self, event):
+    """
+    Method that deletes an event from the bucket
+    """
+        self.bucket.remove(event)
+    
+user_blueprint = Account()
 
-    def register(self):
-        if request.method == 'POST':
-            username = request.form['Username']
-            password = request.form['Password']
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+ 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        email = str(request.form.get('Email'))
+        username = str(request.form.get('Username'))
+        password = str(request.form.get('Password'))
+        
+        try:
             if len(username) == 0:
                 flash('Please enter a Username')
             elif len(username) or len(password) < 5:
                 flash('Username or Password must have at least 5 characters')
             else:
-                USER_DICT[username] = password
+                user_blueprint.email = email
+                user_blueprint.name = username
+                user_blueprint.password = password
                 flash('Thanks for registering')
                 return redirect(url_for('login'))
-        return render_template('register.html')
-
-    def login(self):
-        try:
-            if request.method == "POST":
-                username = request.form['Username']
-                password = request.form['Password']
-
-                if len(username) == 0:
-                    flash('Please enter a Username')
-                elif len(username) or len(password) < 5:
-                    flash('Invalid credentials. Try Again.')
-                elif username in USER_DICT.key() and password == USER_DICT[username]:
-                    return redirect(url_for('home'))
-                else:
-                    flash("Invalid credentials. Try Again.")
-
-            return render_template('login.html')
         except Exception as e:
             flash(e)
-            return render_template('home.html')
-
-    def create(self):
-        data = request.form['Text']
-        if len(data) == 0:
-            flash('Please enter a value')
-        elif len(data) > 100:
-            flash('Max 100 Characters')
+    return render_template('register.html')
+            
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = str(request.form.get('Username'))
+        password = str(request.form.get('Password'))
+        if username == user_blueprint.username and password == user_blueprint.password:
+            return redirect(url_for('view'))
         else:
-            BUCKET_LIST.append(data)
+            return redirect(url_for('register'))
+    return render_template('login.html')
 
-        return render_template('view.html')
+@app.route('/view', methods=['GET', 'POST'])
+def view():
+    if request.method == 'POST':
+        item = str(request.form.get('Item'))
+        if item:
+            user_blueprint.add_event(item)
+    username = user_blueprint.name
+    return render_template('view.html', user_bucket=user_blueprint.bucket, username=username)
+    
+@app.route('view/<event>/delete', methods=['POST'])
+def delete_bucket_event(event):
+    if event in user_blueprint.bucket:
+        user_blueprint.delete_event(event)
+    return redirect(url_for('view'))
 
-    def bucketlist_manipulation(self):
-        event = str(request.data.get('Event'))
-        boolean_field = str(request.data.get('Boolean'))
 
-        if request.method == 'DELETE' and boolean_field == 'True':
-            for val in BUCKET_LIST:
-                if request.data.get('Boolean') == 'True':
-                    BUCKET_LIST.remove(val)
-            return render_template('view.html')
 
-        elif request.method == 'POST':
-            BUCKET_LIST.append(event)
-            return render_template('view.html')
 
-    def view(self):
-        [val for val in BUCKET_LIST]
-        return render_template('view.html', val=val)
 
-    def home(self):
-        return render_template('home.html')
 
-    def logout(self):
-        return render_template
