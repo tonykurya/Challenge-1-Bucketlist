@@ -1,8 +1,10 @@
 from flask import Flask
 
+# Construct an instance of Flask class for the Application
 app = Flask(__name__, instance_relative_config=True)
 
-from app import views
+from Application import FlaskBucket
 
-app.config.from_object('config')
+# Enable reloader and debugger
+app.debug = True
 
