@@ -1,168 +1,296 @@
-/* reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
-ol,ul{list-style:none;margin:0px;padding:0px;}
-blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
-table{border-collapse:collapse;border-spacing:0;}
-/* start editing from here */
-a{text-decoration:none;}
-.txt-rt{text-align:right;}/* text align right */
-.txt-lt{text-align:left;}/* text align left */
-.txt-center{text-align:center;}/* text align center */
-.float-rt{float:right;}/* float right */
-.float-lt{float:left;}/* float left */
-.clear{clear:both;}/* clear float */
-.pos-relative{position:relative;}/* Position Relative */
-.pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
-img{max-width:100%;}
-/*end reset*/
-body {
-    background:url('../images/bg2.jpg') no-repeat 62% 90%;
-    background-size: cover;
-    text-align: center;
-	font-family: 'Open Sans', sans-serif;
-}
 
-/*--header--*/
-
-.header-w3l{
-    margin: 75px;
-}
-.header-w3l h1{
-	font-size:3em;
-    color:white;
-    letter-spacing: 6px;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-}
-/*--//header--*/
-
-/*--main--*/
-
-.main-content-agile {
-    margin: 145px 0px;
-}
-.sub-main-w3 input[type="text"],.sub-main-w3 input[type="password"] {
-    outline: none;
-    font-size: 1.1em;
-    padding: 20px 10px 20px 10px;
-    border: none;
-    margin: 0 0 15px 0;
-    font-family: 'Open Sans', sans-serif;
-    background: none;
-    border-bottom: 2px solid #eee;
-    width: 20%;
-    color: white;
-    font-weight: 600;
-}
-.sub-main-w3 input[type="submit"] {
-	background: url('../images/arrow.png') no-repeat 30% 45%;
-    height: 67px;
-    outline: none;
-    margin-top: 38px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #fff;
-    width: 67px;
-}
-/*--//main--*/
-
-/*--footer--*/
-.footer {
-    padding: 2.3em 0;
-}
-.footer p {
-    font-size: .9em;
-    color: white;
-}
-.footer p a {
-    color: #d20962;
-}
-.footer p a:hover {
-   text-decoration:underline;
-}
-/*--//footer--*/
-
-/*--placeholder-color--*/
-
-::-webkit-input-placeholder{
-	color:rgba(255, 255, 255, 0.65);
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: rgba(255, 255, 255, 0.65); 
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(255, 255, 255, 0.65);  
-}
-
-:-ms-input-placeholder {  
-   color: rgba(255, 255, 255, 0.65);  
-}
-/*--//placeholder-color--*/
-
-/*--responsive--*/
-
-@media(max-width:1440px){
-	
-}
-@media (max-width:1366px){
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"]{
-		width:22%;
-	}
-}	
-@media (max-width:1280px){
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"] {
-		width:23%;
-	}
-}
-@media (max-width:1024px){
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"]{
-		width:28%;
-	}
-}
-@media (max-width:991px){
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"] {
-		width:29%;
-	}
-}
-@media(max-width:800px){
-	.header-w3l h1 {
-		font-size: 39px;
-	}
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"] {
-		width:34%;
-	}
-}
-@media(max-width:768px){
-	.header-w3l h1 {
-		font-size: 36px;
-	}
-	.main-content-agile {
-		margin: 226px 0px;
-	}
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"] {
-		width:36%;
-	}
-}
-@media(max-width:736px){
-	.header-w3l h1 {
-		font-size: 34px;
-	}
-	.sub-main-w3 input[type="password"],.sub-main-w3 input[type="text"] {
-		width:40%;
-		font-size: 0.9em;
-	}
-	.main-content-agile {
-		margin: 181px 0px;
-	}
-}
 
 /*--//responsive--*/
+
+.box {background-color: #AFAEAF; 
+}
+
+
+h1 {font-family: 'Pacifico', cursive;
+    font-size: 48px;}
+
+
+/*FORM
+====================================================
+*/
+body .Login {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="Username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="Password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+================================================================ */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+/* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+
+
+
+
+/*BUTTON
+=================================================================*/
+.btn-default-outline {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+
+/*BUCKET
+================================================================*/
+.box {background-color: #AFAEAF; 
+}
+
+
+h1 {font-family: 'Pacifico', cursive;
+    font-size: 48px;}
+
+
+/*FORM
+====================================================
+*/
+body .Login {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="Username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="Password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+================================================================ */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+/* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+
+
+
+
+/*BUTTON
+=================================================================*/
+.btn-default-outline {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+
+/*BUCKET
+================================================================*/
+
+.panel {
+  border: 1px solid #ddd;
+  background-color: #fcfcfc;
+}
+.panel .btn-group {
+  margin: 15px 0 30px;
+}
+.panel .btn-group .btn {
+  transition: background-color .3s ease;
+}
+.table-filter {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.table-filter tbody tr:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+.table-filter tbody tr td {
+  padding: 10px;
+  vertical-align: middle;
+  border-top-color: #eee;
+}
+.table-filter tbody tr.selected td {
+  background-color: #eee;
+}
+.table-filter tr td:first-child {
+  width: 38px;
+}
+.table-filter tr td:nth-child(2) {
+  width: 35px;
+}
+.ckbox {
+  position: relative;
+}
+.ckbox input[type="checkbox"] {
+  opacity: 0;
+}
+.ckbox label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ckbox label:before {
+  content: '';
+  top: 1px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.ckbox input[type="checkbox"]:checked + label:before {
+  border-color: #2BBCDE;
+  background-color: #2BBCDE;
+}
+.ckbox input[type="checkbox"]:checked + label:after {
+  top: 3px;
+  left: 3.5px;
+  content: '\e013';
+  color: #fff;
+  font-size: 11px;
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+}
+
+.table-filter .media-photo {
+  width: 35px;
+}
+.table-filter .media-body {
+    display: block;
+    
+}
+.table-filter .media-meta {
+  font-size: 11px;
+  color: #999;
+}
+.table-filter .media .title {
+  color: #2BBCDE;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0;
+}
+.table-filter .media .title span {
+  font-size: .8em;
+  margin-right: 20px;
+}
+.table-filter .media .title create {
+  color: #5cb85c;
+}
+.table-filter .media .title edit {
+  color: #f0ad4e;
+}
+.table-filter .media .title delete {
+  color: #d9534f;
+}
+.table-filter .media .summary {
+  font-size: 14px;
+}
+*/
