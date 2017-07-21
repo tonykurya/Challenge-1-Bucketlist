@@ -26,7 +26,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body style="background-color: #551a8b">
 
       <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -38,7 +38,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-static-top/">{{ username }}</a></li>
-            <li class="active"><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li class="active"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="active"><a href="/login"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -50,15 +51,27 @@
     <div id="myCarousel" class="carousel" data-ride="carousel">
       <div class="carousel-inner" role="">
         <div class="item active">
-          <img class="img-responsive" src="https://s-media-cache-ak0.pinimg.com/originals/82/a7/8d/82a78d5045d1bfa21700e9d821b13784.jpg" alt="bucket">
+          <img class="img-responsive" src="https://resi.ze-robot.com/images/25/25-of-my-favorite-wallpapers-from-reddit-rearthporn-ritookapicture-rspaceporn-rart-and-a-mix-of-other-sources.-credit-to-each-in-imgur-descriptions.-8-1366%C3%97768.jpg" alt="bucket">
           <div class="container">
             <div class="carousel-caption">
               <h1>Ultimate BucketList</h1>
               <p>A list of things you'd like to do before you die, like visiting the Rift Valley, falling in love or falling into the Rift Valley.</p>
-              <p><a class="btn btn-lg btn-default-outline" href="{{ url_for('view') }}" role="button"><b>Create your bucket</b></a></p>
+              <p><button type="button" class="btn btn-deep-purple" href="{{ url_for('view') }} role="button" style="background-color: #551a8b">Create Bucket</button></p>
+
+            
+              <!--<a class="btn btn-lg btn-default-outline" href="" role="button"><b>Create your bucket</b></a></p>-->
             </div>
           </div>
         </div>
+
+
+<a href="https://twitter.com/Dave_Conner" class="btn btn-1">
+      <svg>
+        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+      </svg>
+     Hover
+    </a>
+
 
 
 </section>

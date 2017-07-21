@@ -39,7 +39,7 @@ user_accounts = []
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', username=user_blueprint.name)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -62,8 +62,8 @@ def register():
                 flash('Thanks for registering')
                 return redirect(url_for('home'))
         except Exception as e:
-            flash(e)
-        return render_template('register.html')
+            return render_template('home.html')
+    return render_template('register.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -72,11 +72,11 @@ def login():
         username = str(request.form.get('Username'))
         password = str(request.form.get('Password'))
         for user in user_accounts:     
-            if username == user.username and password == user.password:
+            if username == user_blueprint.name and password == user_blueprint.password:
                 return redirect(url_for('view'))
             else:
                 return redirect(url_for('register'))
-        return render_template('login.html')
+    return render_template('login.html')
 
 
 @app.route('/view', methods=['GET', 'POST'])
@@ -86,7 +86,7 @@ def view():
         if item:
             user_blueprint.add_event(item)
     username = user_blueprint.name
-    return render_template('view.html', user_bucket=user_blueprint.bucket, username=username)
+    return render_template('view.html', user_bucket=user_blueprint.bucket, username=user_blueprint.name)
 
 
 @app.route('/view/<event>/delete', methods=['POST'])
