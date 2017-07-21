@@ -8,3 +8,4 @@ from Application import FlaskBucket
 # Enable reloader and debugger
 app.debug = True
 
+app.config['SECRET_KEY'] = 'secret'

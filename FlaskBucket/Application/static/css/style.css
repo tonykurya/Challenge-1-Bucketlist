@@ -2,7 +2,7 @@
 
 /*--//responsive--*/
 
-.box {background-color: #AFAEAF; 
+.box {background-color: #fff; 
 }
 
 
@@ -100,7 +100,8 @@ body .Login {
 
 
 h1 {font-family: 'Pacifico', cursive;
-    font-size: 48px;}
+    font-size: 48px;
+    color: #fff}
 
 
 /*FORM
@@ -184,6 +185,41 @@ body .Login {
   background-color: transparent;
   border-color: #ccc;
 }
+
+
+.btn-1 {
+  background: darken($red, 1.5%);
+  font-weight: 100;
+  
+  svg {
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+  }
+  
+  rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 422, 0;
+  }
+}
+
+.btn-1:hover {
+  background: rgba($red, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+  
+  rect {
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+
 
 
 /*BUCKET

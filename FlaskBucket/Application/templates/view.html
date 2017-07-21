@@ -26,7 +26,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body style="background-color: #551a8b">
 
       <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -38,7 +38,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-static-top/">{{ username }}</a></li>
-            <li class="active"><a href="./"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li class="active"><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,7 +46,9 @@
     <section id="box">
 
     <!-- Main jumbotron for call to action -->
-    <div class="jumbotron" style="background-image: url(sliderbg.png); background-size: 100% 100%;">
+    
+    <div class="jumbotron" style="background-image: url(https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwin8pKs1prVAhWDPxoKHZFmDTkQjRwIBw&url=http%3A%2F%2Fwww.koliqi.co.uk%2Fgallery%2Fquartzforms%2Fextreme-iceberg-white%2F&psig=AFQjCNE-rIXEjAp_ix7DTDAqhGSbtASJcw&ust=1500736714074706">
+      
       <div class="container">
         <h1>bucketlist</h1>
         <p>Log a list of things you'd like to do before you die, like visiting the Rift Valley, falling in love or falling into the Rift Valley
@@ -68,6 +70,9 @@
 
               </div>
             </div>
+            
+            <div class="container">
+            
             <div class="table-container">
               <table class="table table-filter">
                 <tbody>
@@ -85,12 +90,12 @@
                           <img src="https://secure.gravatar.com/avatar/9fb098fe2f246b722a13d3fd046cfdbc?s=50" class="media-photo">
                         </a>
                         <div class="media-body">
-                          <span class="media-meta pull-right">fEBER</span>
+                          <span class="media-meta pull-right">Jan</span>
                           <h4 class="title">
                             1
                             <span class="pull-right create">(Create)</span>
                           </h4>
-                          <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                          <p class="summary">Climb to the summit of the Himalayas...</p>
                         </div>
                       </div>
                     </td>
@@ -108,12 +113,12 @@
                           <img src="https://secure.gravatar.com/avatar/9fb098fe2f246b722a13d3fd046cfdbc?s=50" class="media-photo">
                         </a>
                         <div class="media-body">
-                          <span class="media-meta pull-right">Febrero 13, 2016</span>
+                          <span class="media-meta pull-right">Feb 13, 2016</span>
                           <h4 class="title">
                             2
                             <span class="pull-right edit">(Edit)</span>
                           </h4>
-                          <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                          <p class="summary">Visit Monte Carlo...</p>
                         </div>
                       </div>
                     </td>
@@ -131,12 +136,12 @@
                           <img src="https://secure.gravatar.com/avatar/9fb098fe2f246b722a13d3fd046cfdbc?s=50" class="media-photo">
                         </a>
                         <div class="media-body">
-                          <span class="media-meta pull-right">Febrero 13, 2017</span>
+                          <span class="media-meta pull-right">Feb 13, 2017</span>
                           <h4 class="title">
                             3
                             <span class="pull-right delete">(Delete)</span>
                           </h4>
-                          <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                          <p class="summary">Go Bunjee jumping...</p>
                         </div>
                       </div>
                     </td>
@@ -155,12 +160,12 @@
                           <img src="https://secure.gravatar.com/avatar/9fb098fe2f246b722a13d3fd046cfdbc?s=50" class="media-photo">
                         </a>
                         <div class="media-body">
-                          <span class="media-meta pull-right">Febrero 13, 2017</span>
+                          <span class="media-meta pull-right">Feb 13, 2017</span>
                           <h4 class="title">
                             4
                             <span class="pull-right create">(Create)</span>
                           </h4>
-                          <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                          <p class="summary">Publish at least 100 apps...</p>
                         </div>
                       </div>
                     </td>
@@ -183,7 +188,7 @@
                             5
                             <span class="pull-right edit">(Edit)</span>
                           </h4>
-                          <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                          <p class="summary">Go scuba diving in the Bermuda Triangle...</p>
                         </div>
                       </div>
                     </td>
@@ -191,6 +196,10 @@
                 </tbody>
               </table>
             </div>
+            
+            </div>
+            
+            
           </div>
         </div>
 

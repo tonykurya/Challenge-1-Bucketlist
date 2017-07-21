@@ -34,14 +34,14 @@ class Account(object):
 
 
 user_blueprint = Account()
-
-
-@app.route('/home')
-def home():
-    return render_template('home.html')
-
+user_accounts = []
 
 @app.route('/')
+@app.route('/home')
+def home():
+    return render_template('home.html', username=user_blueprint.name)
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -58,10 +58,11 @@ def register():
                 user_blueprint.email = email
                 user_blueprint.name = username
                 user_blueprint.password = password
+                user_accounts.append(user_blueprint)
                 flash('Thanks for registering')
-                return redirect(url_for('login'))
+                return redirect(url_for('home'))
         except Exception as e:
-            flash(e)
+            return render_template('home.html')
     return render_template('register.html')
 
 
@@ -70,10 +71,11 @@ def login():
     if request.method == 'POST':
         username = str(request.form.get('Username'))
         password = str(request.form.get('Password'))
-        if username == user_blueprint.username and password == user_blueprint.password:
-            return redirect(url_for('view'))
-        else:
-            return redirect(url_for('register'))
+        for user in user_accounts:     
+            if username == user_blueprint.name and password == user_blueprint.password:
+                return redirect(url_for('view'))
+            else:
+                return redirect(url_for('register'))
     return render_template('login.html')
 
 
@@ -84,7 +86,7 @@ def view():
         if item:
             user_blueprint.add_event(item)
     username = user_blueprint.name
-    return render_template('view.html', user_bucket=user_blueprint.bucket, username=username)
+    return render_template('view.html', user_bucket=user_blueprint.bucket, username=user_blueprint.name)
 
 
 @app.route('/view/<event>/delete', methods=['POST'])
