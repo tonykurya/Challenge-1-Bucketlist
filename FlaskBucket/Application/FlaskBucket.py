@@ -14,25 +14,6 @@ registered_emails = []
 bucketlist_dict = {}
 
 
-class AccountManager(object):
-    """
-    This class represents user account data and methods.
-    """
-
-    def __init__(self, user_dict):
-        """
-        Initialize self
-        """
-        self.email = email
-        self.username = username
-        self.password = password
-        self.user_dict = {}
-
-    def user_data(self):
-        user_dict[email] = [self.email, self.username,
-            self.password, self.user_dict]
-
-
 # Bucketlist Data Class
 class Bucketlist(object):
     def __init__(self, name, email):
@@ -65,21 +46,21 @@ def home():
 @app.route('/')
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    form = RegisterForm(requestForm(request.form)
-    if request.method == 'POST' and form.validate():
-        name = form.name.data
-        email = form.email.data
-        username = form.useraname.data
+    form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate() is True:
+        name=form.name.data
+        email=form.email.data
+        username=form.username.data
         password=sha256_crypt.encrypt(str(form.password.data))
 
         if email in user_dict:
             flash('That email is already registered')
 
-        user_dict[email]=[name, username, email, password]
-        flash('Welcome to Bucketlist')
-
-        redirect(url_for('login')
-    return render_template('register.html', form=form)
+        else:
+            user_dict[email]=[name, username, email, password]
+            flash('Welcome to Bucketlist')
+            redirect(url_for('login')
+    # return render_template('register.html', form=form)
 
 
 # user login
@@ -150,7 +131,6 @@ def view():
         msg='No Articles Found'
 
     return render_template('view.html')
-
 
 
 if __name__ == __main__:
