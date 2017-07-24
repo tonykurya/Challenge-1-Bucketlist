@@ -2,95 +2,136 @@
 """
 flaskBucket: Python-Flask Class Encapsulating Create Read Update Delete BucketList
 """
-from flask import render_template, url_for, request, flash, redirect
+from flask import Flask, render_template, url_for, request, flash, request, redirect, session, logging
+from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from Application import app
+from passlib.hash import sha256_crypt
+from functools import wraps
 
 
-class Account(object):
-    """
-    This class represents user account data and methods.
-    """
-
-    def __init__(self):
-        """
-        Initialize self
-        """
-        self.bucket = []
-        self.email = ""
-        self.name = ""
-        self.password = ""
-
-    def add_event(self, event):
-        """
-        Method that adds an event to the bucket
-        """
-        self.bucket.append(event)
-
-    def delete_event(self, event):
-        """
-        Method that deletes an event from the bucket
-        """
-        self.bucket.remove(event)
+user_dict = {}
+registered_emails = []
+bucketlist_dict = {}
 
 
-user_blueprint = Account()
-user_accounts = []
+# Bucketlist Data Class
+class Bucketlist(object):
+    def __init__(self, name, email):
+        self.data = {}
+        self.name = name
+        self.email = email
 
-@app.route('/')
+
+# Bucketlist Form Class
+class BucketlistForm(Form):
+    title = StringField('Title', [validators.length(min=1, max=100)])
+    body = StringField('Username', [validators.Length(min=4, max=25)])
+
+
+class RegisterForm(object):
+    name = StringField('Name', [validators.Length(min=1, max=50)])
+    username = StringField('Username', [validators.Length(min=4, max=25)])
+    email = StringField('Email', [validators.Length(min=6, max=20)])
+    password = PasswordField('Password', [validators.DataRequired(),
+        validators.EqualTo('confirm', message='Passwords do not match')
+    ])
+    confirm = PasswordField('Confirm Password')
+
+
 @app.route('/home')
 def home():
-    return render_template('home.html', username=user_blueprint.name)
+    return render_template('home.html')
 
 
+@app.route('/')
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        email = str(request.form.get('Email'))
-        username = str(request.form.get('Username'))
-        password = str(request.form.get('Password'))
+    form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate() is True:
+        name=form.name.data
+        email=form.email.data
+        username=form.username.data
+        password=sha256_crypt.encrypt(str(form.password.data))
 
-        try:
-            if len(username) == 0:
-                flash('Please enter a Username')
-            elif len(username) or len(password) < 5:
-                flash('Username or Password must have at least 5 characters')
-            else:
-                user_blueprint.email = email
-                user_blueprint.name = username
-                user_blueprint.password = password
-                user_accounts.append(user_blueprint)
-                flash('Thanks for registering')
-                return redirect(url_for('home'))
-        except Exception as e:
-            return render_template('home.html')
-    return render_template('register.html')
+        if email in user_dict:
+            flash('That email is already registered')
+
+        else:
+            user_dict[email]=[name, username, email, password]
+            flash('Welcome to Bucketlist')
+            redirect(url_for('login')
+    # return render_template('register.html', form=form)
 
 
+# user login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = str(request.form.get('Username'))
-        password = str(request.form.get('Password'))
-        for user in user_accounts:     
-            if username == user_blueprint.name and password == user_blueprint.password:
-                return redirect(url_for('view'))
-            else:
-                return redirect(url_for('register'))
+        # Get Form Fields
+        username=request.form['Email']
+        password_candidate=request.form['Password']
+
+        # Get user by email
+        result=user_dict[email]
+
+        if len(result) > 0:
+            # Get stored hash
+            # Get this information from list
+            password=result[3]
+
+        # Compare Passwords
+        if sha256_crypt.verify(password_candidate, password)
+            app.logger.info('PASSWORD MATCHED')
+
+        else:
+            app.logger.info('PASSWORD NOT MATCHED')
+
+    else:
+        error='User not found'
+
+
     return render_template('login.html')
+
+
+# Check if user is logged in
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, Please login', 'danger')
+            return redirect(url_for('login'))
+    return wrap
+
+
+@app.route('/add_item', methods=['GET', 'POST'])
+@is_logged_in
+def add_bucket_item():
+    form=BucketlistForm(request.form)
+    if request.method == 'POST' and form.validate():
+        title=form.title.data
+        body=form.body.data
+
+        user_id=session['email']
+        bucketlist_dict[user_id]=[title, body, user_id]
+
+        flash('Event Created', 'success')
+
+        return redirect(url_for('view')
+    return render_template('add_bucket_item', form=form)
 
 
 @app.route('/view', methods=['GET', 'POST'])
 def view():
-    if request.method == 'POST':
-        item = str(request.form.get('Item'))
-        if item:
-            user_blueprint.add_event(item)
-    username = user_blueprint.name
-    return render_template('view.html', user_bucket=user_blueprint.bucket, username=user_blueprint.name)
+    if len(bucketlist_dict) > 0:
+        for user, event in bucketlist_dict:
+            return render_template('view.html', event=event)
+    else:
+        msg='No Articles Found'
+
+    return render_template('view.html')
 
 
-@app.route('/view/<event>/delete', methods=['POST'])
-def delete_bucket_event(event):
-    if event in user_blueprint.bucket:
-        user_blueprint.delete_event(event)
-    return redirect(url_for('view'))
+if __name__ == __main__:
+    app.run(debug=True)
