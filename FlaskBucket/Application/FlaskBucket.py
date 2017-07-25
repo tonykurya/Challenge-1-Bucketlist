@@ -5,13 +5,14 @@ flaskBucket: Python-Flask Class Encapsulating Create Read Update Delete BucketLi
 from flask import Flask, render_template, url_for, request, flash, request, redirect, session, logging
 from passlib.hash import sha256_crypt
 from functools import wraps
-from account_manager import User
 # from account_manager import Bucketlist
+import os
 
 app = Flask(__name__)
 
+app.secret_key = os.urandom(20)
 
-global new_user
+user_accounts = {}
 
 '''
 # Bucketlist Form Class
@@ -42,12 +43,11 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     if request.method == 'POST':
-        global new_user
         email = request.form['Email']
         username = request.form['Username']
-        password = sha256_crypt.encrypt(str(request.form['Password']))
-        new_user = User(email, username, password)
-        print(new_user)
+        # password = sha256_crypt.encrypt(str(request.form['Password']))
+        password = str(request.form['Password'])
+        user_accounts[email] = [email, username, password]
         # user_account = User.register(email, username, password)
         # print(user_account)
         return redirect(url_for('login'))
@@ -63,17 +63,16 @@ def login():
         # Get Form Fields
         email_candidate = request.form['Email']
         password_candidate = request.form['Password']
-        global new_user
 
         # Get user by email
-        if email_candidate in new_user.user_data.keys():
-            user_info = user_data['email']
-            user_password = user_info['password']
-
+        for value in user_accounts.keys():
+            if email_candidate == value:
+                user_info = user_accounts[email_candidate]
             # Compare Passwords
-            if sha256_crypt.verify(password_candidate, user_password):
-                app.logger.info('You are now signed in!')
-                return render_template('home.html')
+            #if sha256_crypt.verify(password_candidate, user_password):
+                if password_candidate == user_info[2] and email_candidate == user_info[0]:
+                    session['email'] = email_candidate
+                    redirect('view.html')
 
             else:
                 app.logger.info('Invalid password')
@@ -89,6 +88,7 @@ def view():
     return render_template('view.html')
 
 
+'''
 # Check if user is logged in
 def is_logged_in(f):
     @wraps(f)
@@ -117,7 +117,7 @@ def add_bucket_item():
         return redirect(url_for('view'))
     else:
         return render_template('add_bucket_item', form=form)
-
+'''
 
 if __name__ == '__main__':
     app.run(debug=True)
