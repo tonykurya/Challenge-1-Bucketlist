@@ -2,7 +2,7 @@
 ---
 [![PyPI](https://img.shields.io/pypi/pyversions/Django.svg)]()
 [![DUB](https://img.shields.io/dub/l/vibe-d.svg)]()
-[![Coverage Status](https://coveralls.io/repos/github/tonykurya/Challenge-1-Bucketlist.svg?branch=FlaskBucket/badge.svg?branch=FlaskBucket)](https://coveralls.io/github/tonykurya/Challenge-1-Bucketlist?branch=FlaskBucket)
+# [![Coverage Status](https://coveralls.io/repos/github/tonykurya/Challenge-1-Bucketlist.svg?branch=FlaskBucket/badge.svg?# branch=FlaskBucket)](https://coveralls.io/github/tonykurya/Challenge-1-Bucketlist?branch=FlaskBucket)
 [![Build Status](https://travis-ci.org/tonykurya/Challenge-1-Bucketlist.svg?branch=master)](https://travis-ci.org/tonykurya/Challenge-1-Bucketlist)
 [![Code Climate](https://codeclimate.com/github/tonykurya/Challenge-1-Bucketlist/badges/gpa.svg)](https://codeclimate.com/github/tonykurya/Challenge-1-Bucketlist)
 
