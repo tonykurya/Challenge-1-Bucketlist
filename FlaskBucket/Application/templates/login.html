@@ -25,13 +25,15 @@
     <![endif]-->
   </head>
 
-  <body style="background-color: #551A8B" class="Login">
+  <body class="Login" style="background-color: #551a8b">
 
       <!--Navbar-->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img alt="Brand" src="../static/images/bucketlist.png" height="35" width="40"></a>
+            <a class="navbar-brand" href="#">
+              <img alt="Brand" src="../static/images/bucketlist.png" height="35" width="40">
+            </a>
           </div>
         </div>
       </nav>
@@ -39,31 +41,41 @@
 
 
 
+    <div class="container">
 
-
-      <form class="form-signin" method="POST" action='/view'>
-        
-        <h1 style="color: #fff; margin-bottom: 30px" class="form-signin-heading">Please sign in</h1>
-        
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="Username" id="Username" class="form-control" placeholder="Username" required autofocus>
+      <form class="form-signin" method="POST" action='/login'>
+        <h1 class="form-signin-heading" style="margin-bottom: 10px">Please sign in</h1>
+        <label for="inputUsername" class="sr-only">Email</label>
+        <input type="text" id="Email" name="Email" class="form-control" placeholder="Email" required autofocus>
         <label for="Password" class="sr-only">Password</label>
-        <input type="Password" id="Password" class="form-control" placeholder="Password" required>
+        <input type="Password" id="Password" name="Password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" name="Check" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" style="background-color: #FFC200" type="submit">Sign in</button>
-
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+         {% endif %}
+        {% endwith %}
 
-    
-    
+        {% if error %}
+          <div class="alert alert-danger">{{error}}</div>
+        {% endif %}
+
+        {% if msg %}
+          <div class="alert="alert alert-success">{{msg}}</div>
+        {% endif %}
+
     </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

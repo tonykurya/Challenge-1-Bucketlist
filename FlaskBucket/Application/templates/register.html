@@ -44,20 +44,20 @@
         <div col-md-6>
 
 
-      <form class="form-signin" method="POST" action="/login">
+      <form class="form-signin" method="POST" action="/register">
             <h1 style="color: #fff; margin-bottom: 30px;">Please sign up</h1>
         
         <label for="inputEmail" class="sr-only">Email</label>
-        <input type="Username" id="Email" class="form-control" placeholder="Email" required autofocus style="margin-top: 10px; margin-bottom: 10px">
+        <input type="Username" id="Email" name="Email" class="form-control" placeholder="Email" required autofocus style="margin-top: 10px; margin-bottom: 10px">
         
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="Username" id="Username" class="form-control" placeholder="Username" required style="margin-bottom: 10px">
+        <input type="Username" id="Username" name="Username" class="form-control" placeholder="Username" required style="margin-bottom: 10px">
         
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="Password" id="Password" class="form-control" placeholder="Password" required style="margin-bottom: 10px">
+        <input type="Password" id="Password" name="Password" class="form-control" placeholder="Password" minlength= "6" required style="margin-bottom: 10px">
 
         <label for="inputPassword" class="sr-only">Confirm Password</label>
-        <input type="Password" id="Password" class="form-control" placeholder="Confirm Password" required>
+        <input type="Password" id="Password" name="Confirm" class="form-control" placeholder="Confirm Password" required>
         
         
         <div class="checkbox">
@@ -70,6 +70,15 @@
 
       </form>
         </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div col-md-6 class="alert alert-{{ category }}">{{ message }}</li>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
         </div>
     </div> <!-- /container -->
     </section>
