@@ -83,9 +83,11 @@
       </div>
       <div class="modal-body">
         <p>
-        <div class="form-group" method="POST" name="Name" action="/bucket">
+        <form  method="POST" name="Name" action="/bucket">
+        <div class="form-group">
           <input type="text" placeholder="Name" class="form-control" id="usr">
         </div>
+        </form>
         </p>
     </div>
       <div class="modal-footer">
@@ -106,10 +108,10 @@
   
 {% for key, value in user.bucketlist_holder %}
     <div>
-    <a href="#" class="list-group-item active">{{ key }}</a>
+    <a href="#" class="list-group-items active">{{ key }}</a>
     {% if len(value) >= 1 %}
         {% for event in value %}
-          {%  %}
+          {% bucket_event =  %}
     <a href="#" class="list-group-item active">{{ event }}</a>
     </div>
 {% endfor %}

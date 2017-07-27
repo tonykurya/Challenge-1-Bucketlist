@@ -5,7 +5,7 @@ flaskBucket: Python-Flask Class Encapsulating Create Read Update Delete BucketLi
 from flask import Flask, render_template, url_for, flash, request, redirect, session, logging
 # from passlib.hash import sha256_crypt
 from functools import wraps
-from account_manager import User
+# from account_manager import Bucketlists
 # from wtforms import Form, StringField, validators, PasswordField
 import os
 
@@ -16,7 +16,12 @@ app.secret_key = os.urandom(20)
 global user_accounts
 user_accounts = {}
 
-user = User()
+global bucketlist
+bucketlist = {}
+
+global bucketlist_holder
+bucketlist_holder = {}
+
 
 # Bucketlist Form Class
 '''
@@ -108,10 +113,10 @@ def is_logged_in(f):
             return f(*args, **kwargs)
         else:
             flash('Unauthorized, Please login', 'danger')
-            return redirect(url_for('login'))
+            return redirect(url_for('index'))
     return wrap
 
-
+'''
 @app.route('/add_item', methods=['GET', 'POST'])
 @is_logged_in
 def add_bucket_item():
@@ -121,13 +126,14 @@ def add_bucket_item():
         body = form.body.data
 
         user_id = session['email']
-        bucketlist_dict[user_id] = [title, body, user_id]
+        bucketlist_holder[use_id] = [title, body, user_id]
 
         flash('Event Created', 'success')
 
         return redirect(url_for('view'))
     else:
         return render_template('add_bucket_item', form=form)
+'''
 
 
 @app.route('/logout')
@@ -135,32 +141,58 @@ def logout():
     session.clear()
     flash('You are now logged out')
 
-
+'''
 @app.route('/bucket', methods=['GET', 'POST'])
 def bucket():
     if request.method == 'GET':
-        return render_template('bucket.html')
+        return render_template('bucket.html')'''
 
-
-@app.route('/view', methods=['GET', 'POST'])
+@app.route('/view_items', methods=['GET', 'POST'])
 def view():
     if request.method == 'GET':
         return render_template('view.html')
 
 
-@app.route('/bucket', methods=['GET', 'POST'])
+@app.route('/dash', methods=['GET', 'POST'])
+def dash():
+    if request.method == 'GET':
+        return render_template('dash.html')
+
+
+@app.route('/view', methods=['GET', 'POST'])
+@is_logged_in
 def create_bucketlist():
-    # Create Bucketlist
+    count = 0
+    # # Create Bucketlist
+    # if request.method == 'GET':
+    #     return render_template('bucket.html')
     if request.method == 'POST':
+        # Get name the Bucketlist name
         bucketlist_name = request.form['Name']
-        user.bucketlist_name = bucketlist_name
-
-        if bucketlist_name in user.bucketlist_holder.keys():
-            flash('That Bucketlist exists, chose another name.')
-
+        bucketlist_text = request.form['Text']
+        # Check if the name already exists
+        global bucketlist_holder
+        if bucketlist_name in bucketlist_holder.keys():
+            bucketlist_name[count] = bucketlist_text
+            count += 1
+            
+        # Create new Bucketlist
         else:
-            user.add_bucketlist_to_holder(bucketlist_name)
+            global bucketlist_holder
+            bucketlist_holder[bucketlist_name] = {}
+            bucketlist_name[count] = bucketlist_text
+            count += 1
+
     return render_template('bucket.html')
+
+'''
+@app.route('/view', methods=['GET', 'POST'])
+@is_logged_in
+def delete_bucketlist():
+    if request.method == 'Submit':
+'''
+
+
 
 '''
 @app.route('/bucket, methods=['GET', 'POST'])
