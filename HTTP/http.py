@@ -1,4 +1,5 @@
-import googlemaps   #Python client library for Google Maps API WEB Services
+import googlemaps  # Python client library for Google Maps API WEB Services
+
 
 def decodeLocation():
     userLocation = input("Enter city: ")
@@ -12,8 +13,7 @@ def decodeLocation():
     geocode_result = gmaps.geocode(userLocation, {"country": "KE"})
     result = geocode_result[0]['geometry']['location']
     hospitals_nearby = gmaps.places('Hospital', result, 500)
-    print(places_nearby)
+    print(hospitals_nearby)
 
 
 decodeLocation()
-
