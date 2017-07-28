@@ -1,16 +1,15 @@
 import unittest
 
-import FlaskBucket.py
+import run
 
 # from flask import sessions
-application = FlaskBucket.py
+application = run
 
 
 class BasicTests(unittest.TestCase):
     # Executed prior to each test
     def setUp(self):
-        # app = FlaskBucket()
-        pass
+        application = run()
 
     def test_main_page(self):
         response = application.get('/', follow_redirects=True)
